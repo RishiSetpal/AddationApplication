@@ -23,6 +23,14 @@
             let number2 = document.getElementById("num2");
             let msg = document.getElementById("msg");
 
+            // Data validation
+            if (number1.value == "" || number2.value == "") {
+                alert(((number1.value == "") ? "Number 1" : "Number 2") + " Cant be empty");
+                (number1.value == "") ? number1.focus() : number2.focus();
+                msg.innerHTML = "";
+                return;
+            }
+
             let result = (parseFloat(number1.value) + parseFloat(number2.value)).toFixed(4);
             msg.innerHTML = "Addition of Two numbers " + number1.value + " and " + number2.value + " is " + result;
 
